@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  smokeping:
+
+    container_name: smokeping
+    image: linuxserver/smokeping
+    environment:
+      TZ: America/New_York
+      TARGET: home;some-docker;1.1.1.1
+    ports:
+      - 8888:80
+    volumes:
+    - smokeping-data:/data
+
+volumes:
+  smokeping-data:
